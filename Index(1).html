@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice Elettrica Interattiva</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS personalizzato -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Contenitore principale delle calcolatrici -->
+<div class="container">
+    <h1 class="text-center mb-4">Calcolatrice Elettrica Interattiva</h1>
+    
+    <!-- Prima calcolatrice: Risultato in Ohm -->
+    <h3 class="mb-3">Calcolatrice 1: Risultato in Ohm</h3>
+    <form id="calcFormOhm">
+        <div class="mb-3">
+            <label for="voltage1" class="form-label">Voltaggio (in Volt):</label>
+            <input type="number" step="any" class="form-control" id="voltage1" placeholder="Inserisci il voltaggio">
+        </div>
+        <div class="mb-3">
+            <label for="current1" class="form-label">Corrente (in Ampere):</label>
+            <input type="number" step="any" class="form-control" id="current1" placeholder="Inserisci la corrente">
+        </div>
+        <div class="mb-3">
+            <label for="resistance1" class="form-label">Resistenza (in Ohm):</label>
+            <input type="number" step="any" class="form-control" id="resistance1" placeholder="Inserisci la resistenza">
+        </div>
+        <button type="button" class="btn btn-primary w-100" onclick="calculateOhm()">Calcola</button>
+    </form>
+
+    <div class="mt-4">
+        <h4>Risultato:</h4>
+        <div id="resultOhm" class="alert alert-info card">Inserisci due valori per calcolare il terzo</div>
+    </div>
+
+    <!-- Seconda calcolatrice: Risultato in Kilo-ohm -->
+    <h3 class="mb-3 mt-5">Calcolatrice 2: Risultato in Kilo-ohm</h3>
+    <form id="calcFormKOhm">
+        <div class="mb-3">
+            <label for="voltage2" class="form-label">Voltaggio (in Volt):</label>
+            <input type="number" step="any" class="form-control" id="voltage2" placeholder="Inserisci il voltaggio">
+        </div>
+        <div class="mb-3">
+            <label for="current2" class="form-label">Corrente (in Ampere):</label>
+            <input type="number" step="any" class="form-control" id="current2" placeholder="Inserisci la corrente">
+        </div>
+        <div class="mb-3">
+            <label for="resistance2" class="form-label">Resistenza (in Kilo-ohm):</label>
+            <input type="number" step="any" class="form-control" id="resistance2" placeholder="Inserisci la resistenza">
+        </div>
+        <button type="button" class="btn btn-success w-100" onclick="calculateKOhm()">Calcola</button>
+    </form>
+
+    <div class="mt-4">
+        <h4>Risultato:</h4>
+        <div id="resultKOhm" class="alert alert-info card">Inserisci due valori per calcolare il terzo</div>
+    </div>
+</div>
+
+<!-- Pulsante per aprire/chiudere la tendina -->
+<button class="toggle-button" onclick="togglePanel()">Scopri la Legge di Ohm</button>
+
+<!-- Pannello laterale che spiega la Legge di Ohm -->
+<div class="info-panel" id="infoPanel">
+    <h4 class="text-white">Legge di Ohm</h4>
+    <p>Scopri come funziona la Legge di Ohm e calcola facilmente i tuoi risultati!</p>
+    <p>La formula base è:</p>
+    <ul>
+        <li><strong>V = I × R</strong> (Voltaggio = Corrente × Resistenza)</li>
+        <li><strong>I = V / R</strong> (Corrente = Voltaggio / Resistenza)</li>
+        <li><strong>R = V / I</strong> (Resistenza = Voltaggio / Corrente)</li>
+    </ul>
+    <p>Dove:</p>
+    <ul>
+        <li><strong>V</strong>: Voltaggio (Volt)</li>
+        <li><strong>I</strong>: Corrente (Ampere)</li>
+        <li><strong>R</strong>: Resistenza (Ohm)</li>
+    </ul>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- JS personalizzato -->
+<script src="script.js"></script>
+
+</body>
+</html>
