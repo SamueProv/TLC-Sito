@@ -44,3 +44,25 @@ function calculateSuperpositionThree() {
     }
     document.getElementById('resultSuperpositionThree').innerHTML = result;
 }
+
+function generateKarnaugh() {
+    const input = document.getElementById('truthTable').value;
+    const values = input.split(',').map(v => v.trim());
+    if (values.length !== 8 && values.length !== 16) {
+        document.getElementById('karnaughResult').innerHTML = '<div class="alert alert-danger">Errore: Inserire 8 o 16 valori.</div>';
+        return;
+    }
+    
+    let size = values.length === 8 ? 2 : 4;
+    let table = '<table class="table table-bordered text-center">';
+    let count = 0;
+    for (let i = 0; i < size; i++) {
+        table += '<tr>';
+        for (let j = 0; j < size; j++) {
+            table += `<td class="p-3 bg-light">${values[count++]}</td>`;
+        }
+        table += '</tr>';
+    }
+    table += '</table>';
+    document.getElementById('karnaughResult').innerHTML = table;
+}
